@@ -18,7 +18,13 @@ const HALF_LIFE_PERIOD = 5730;
  *
  */
 function dateSample(/* sampleActivity */) {
-  throw new NotImplementedError('Not implemented');
+  let ln2 = 0.693;
+  let k = ln2 / HALF_LIFE_PERIOD;
+
+
+
+
+  // throw new NotImplementedError('Not implemented');
   // remove line with error and write your code here
 }
 
