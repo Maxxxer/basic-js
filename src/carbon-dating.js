@@ -17,12 +17,15 @@ const HALF_LIFE_PERIOD = 5730;
  * dateSample('WOOT!') => false
  *
  */
-function dateSample(/* sampleActivity */) {
+function dateSample(sampleActivity) {
+  let regex = /[a-z]|[\n\t\r]/gi;
+  if (!(typeof sampleActivity === 'string') || sampleActivity === '' || sampleActivity === ' ') return false;
+  if (sampleActivity > 15 || sampleActivity < 1) return false;
+  if (regex.test(sampleActivity)) return false;
+
   let ln2 = 0.693;
   let k = ln2 / HALF_LIFE_PERIOD;
-
-
-
+  return Math.ceil(Math.log(MODERN_ACTIVITY / sampleActivity) / k)
 
   // throw new NotImplementedError('Not implemented');
   // remove line with error and write your code here
