@@ -38,12 +38,9 @@ class VigenereCipheringMachine {
         continue;
       }
       cipherText.push(letters[((letters.indexOf(string[i]) + letters.indexOf(key[keyIterator]))) % mod])
-
       if (keyIterator < key.length - 1) keyIterator++
       else keyIterator = 0;
     }
-    console.log(cipherText)
-
     return (this.direction === false) ? cipherText.reverse().join('') : cipherText.join('');
   }
 
@@ -57,7 +54,6 @@ class VigenereCipheringMachine {
     let regex = /[A-Z]/i;
     key = key.toUpperCase();
     for (let i = 0; i < string.length; i++) {
-
       if (!regex.test(string[i])) {
         cipherText.push(string[i]);
         continue;
